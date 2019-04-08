@@ -47,13 +47,13 @@
           <div class="col-sm-4">
             <h2>关于我</h2>
             <h5>我的照片:</h5>
-            <div class="fakeimg"><img src="/static/img/45b115bf8d9948b7b6ae864bf26da653.jpeg" alt="value"></div>
+            <div class="fakeimg"><img src="/static/img/2.gif" alt="value" width="300px"></div>
             <p>关于我的介绍..</p>
             <h3>链接</h3>
             <p>描述文本。</p>
             <ul class="nav nav-pills nav-stacked">
-              <li class="active"><a href="#">链接 1</a></li>
-              <li><a href="#">链接 2</a></li>
+              <li class="active"><a href="https://github.com/gzmff/gzb-oula" target="_blank">github</a></li>
+              <li><a href="mailto:1923935380@qq.com " target="_blank">链接 2</a></li>
               <li><a href="#">链接 3</a></li>
             </ul>
             <hr class="hidden-sm hidden-md hidden-lg">
@@ -77,6 +77,7 @@
                   <div class="panel-body">
                     {% for i in weather %}
                     <li style="font-size:large">{{ i.wCity }} {{i.wDate}} {{i.wWeather}} {{i.wTeap}}</li>
+                    <hr />
                     {% endfor %}
                   </div>
                 </div>
@@ -96,7 +97,6 @@
                <div class="container"></div>
                <pre class="pre-scrollable"><!--内容可滚动-->
                  <ol >
-                    
                    {% for i in allList %}
                    <li style="font-size:large">{{ i.content }}</li>
                    {% endfor %}
