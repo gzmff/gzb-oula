@@ -20,8 +20,6 @@ from . import view,testdb
 
  
 urlpatterns = [
-    path('hello/', view.hello),
-    path('fx/', view.fx),
     path('testdb/',testdb.testdb),
 ]
 
