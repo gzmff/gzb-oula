@@ -10,3 +10,11 @@ class weathers(models.Model):
     wWeather = models.CharField(max_length=64)
     wTeap = models.CharField(max_length=32)
     objects = models.Manager()
+
+class phone(models.Model):
+    wMark = models.CharField(max_length=256)
+    wNote = models.CharField(max_length=1024)
+    wPrice = models.CharField(max_length=32)
+    wSrc1 = models.CharField(max_length=256,default ="")
+    wSrc2 = models.CharField(max_length=256,default ="")
+    objects = models.Manager()
