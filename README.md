@@ -1,3 +1,3 @@
 # gzb-oula
 
-Hi,I like JS
+Hi
