@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title一个简单的网页</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+   <style type="text/css">
+     p{
+        font-size: 18px;
+     }
+     h1{
+       text-indent: 50px;
+     }
+     li{
+       font-size: 25px;
+     }
+   </style>
+  
+   <body>
+      <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>我的第一个 Bootstrap 页面</h1> 
+      </div>
+       
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="#">网站名</a>
+            
+            
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">主页</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+       
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <h2>fzb</h2>
+            <h5>我的照片:</h5>
+            <div class="fakeimg"><img src="/static/img/2.gif" alt="value" width="300px"></div>
+            <h3>链接</h3>
+            <p>描述文本。</p>
+            <ul class="nav nav-pills nav-stacked">
+              <li class="active"><a href="https://github.com/gzmff/gzb-oula" target="_blank">github</a></li>
+              <li><a href="mailto:1923935380@qq.com " target="_blank">链接 2</a></li>
+            </ul>
+            <hr class="hidden-sm hidden-md hidden-lg">
+          </div>
+          <div class="col-sm-8">
+            <h2>天气爬取</h2>
+            <div class="panel-group" id="accordion">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" 
+                       href="#collapseOne">
+                      七日天气预报
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    {% for i in weather %}
+                    <li style="font-size:large">{{ i.wCity }} {{i.wDate}} {{i.wWeather}} {{i.wTeap}}</li>
+                    <hr />
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            <br>
+            <h2>豆瓣Top250电影</h2>
+               <div class="container"></div>
+               <pre class="pre-scrollable"><!--内容可滚动-->
+                 <ol >
+                   {% for i in allList %}
+                   <li>{{ i.content }}</li>
+                   {% endfor %}
+                 </ol>
+                  <ol >
+                   {% for i in movies %}
+                   <li>{{ i.name }}</li>
+                   {% endfor %}
+                 </ol>
+               </pre>
+            </div>
+
+            <br>
+
+            <h2>美剧(scrapy爬虫)</h2>
+               <div class="container"></div>
+               <pre class="pre-scrollable"><!--内容可滚动-->
+                  <ul >
+                   {% for i in movies %}
+                   <li>{{ i.name }}</li>
+                   {% endfor %}
+                 </ul>
+               </pre>
+            </div>
+
+            <br>
+            <h2>京东手机</h2>
+               <div class="container"></div>
+               <pre class="pre-scrollable"><!--内容可滚动-->
+                 <ol >
+                  {% for i in phones %}
+                  {% if i.wSrc1 %}
+                    <img src="{{ i.wSrc1 }}" alt="" width="250px">
+                  {% else %}
+                    <img src="{{ i.wSrc2 }}" alt="" width="250px"> 
+                    {% endif %}
+                  <h1>品牌： {{i.wMark}}  <small style="color:orangered">价格：{{i.wPrice}}元</small></h1>
+                  <p>简介：{{ i.wNote }}</p>
+                  <hr />
+                  {% endfor %}
+                 </ol>
+               </pre>
+            </div>  
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+      <div class="jumbotron text-center" style="margin-bottom:0">
+      </div>
+ 
+      <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="js/bootstrap.min.js"></script>
+     
+      <link href="/static/css/bootstrap.min.css">
+      <script src='/static/jquery-2.2.4.min.js'></script>
+      <script src='/static/js/bootstrap.min.js'></script>
+   </body>
+</html>
+
+
