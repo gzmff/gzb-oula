@@ -18,3 +18,8 @@ class phone(models.Model):
     wSrc1 = models.CharField(max_length=256,default ="")
     wSrc2 = models.CharField(max_length=256,default ="")
     objects = models.Manager()
+
+class movie(models.Model):
+    name = models.CharField(max_length=200)
+    objects = models.Manager()
+

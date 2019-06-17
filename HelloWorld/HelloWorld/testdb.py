@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from TestModel.models import Test
 from TestModel.models import weathers
 from TestModel.models import phone
+from TestModel.models import movie 
 
 from django.shortcuts import render
 import MySQLdb
@@ -17,6 +18,8 @@ def testdb(request):
     allList = Test.objects.all()#获取top250电影
     weather = weathers.objects.all()#获取天气
     phones = phone.objects.all()#获取手机信息
+    movies = movie.objects.all()#获取美剧
+    # meiju = meiju.objects.all()
 
     '''response3 = Test.objects.get(id=1)'''
 
@@ -32,7 +35,7 @@ def testdb(request):
     return HttpResponse("<p>" + response + "</p>")
     context          = {}
     context['top250'] = response'''
-    return render(request,'base.html',{'allList':allList,'weather':weather,'phones':phones})
+    return render(request,'base.html',{'allList':allList,'weather':weather,'phones':phones,'movies':movies})
        
 
 

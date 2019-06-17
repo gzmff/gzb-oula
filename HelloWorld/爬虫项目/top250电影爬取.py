@@ -27,9 +27,9 @@ def get_all_page(start,end):
 
     return result
 
-'''if __name__=="__main__":
+if __name__=="__main__":
     result = get_all_page(0,10)
-    print(result)'''
+    print(result)
 
 topMovies = []
 topMovies= get_all_page(0,10)
